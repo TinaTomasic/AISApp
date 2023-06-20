@@ -1,0 +1,26 @@
+﻿﻿@using AISApp.ViewModels
+@model EditUserDashboardViewModel
+
+
+<form method="post" asp-action="EditUserProfile" enctype="multipart/form-data">
+    <input type="hidden" id="Id" name="Id" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control" placeholder="FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control" placeholder="LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Contact">Contact</label>
+        <input asp-for="Contact" class="form-control" placeholder="Contact">
+        <span asp-validation-for="Contact" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

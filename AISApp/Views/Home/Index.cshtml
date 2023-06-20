@@ -1,0 +1,55 @@
+﻿﻿@using AISApp.ViewModels
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Find a hospital</h1>
+        <p class="lead text-muted">
+            The Hospital application assists users in finding nearby hospitals and ensuring quick and convenient access to medical care when needed.
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <h1 class="fw-light" style="color:mediumslateblue;">Hospitals near @Model.City</h1>
+            @if (Model.Hospitals == null)
+            {
+                <h1 class="fw-light">
+                    There are no running hospitals in your area! <a asp-area="" asp-controller="Account"
+                                                                asp-action="Login">Login</a> and create one!
+                </h1>
+            }
+            else
+            {
+                @foreach (var item in Model.Hospitals)
+                {
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img src="@item.Image" class="bd-placeholder-img card-img-top" width="100%" height="225"></img>
+                            <div class="card-body">
+                                <p class="card-text">@item.Title</p>
+                                <p class="card-text">@item.Description</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a type="btn btn-success" asp-controller="Hospital" asp-action="Detail" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-outline-secondary">View</a>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

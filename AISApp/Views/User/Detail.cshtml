@@ -1,0 +1,66 @@
+﻿﻿@using AISApp.ViewModels
+@model UserDetailViewModel
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">
+        About the user:
+        
+    </h1>
+    <p style="color:rebeccapurple;"> <b>@Model.UserName </b></p>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8">
+            @*<img class="img-fluid" src="@Model.Image" alt="">*@
+            <img class="img-fluid" src="https://www.pngitem.com/pimgs/m/80-800194_transparent-users-icon-png-flat-user-icon-png.png"
+                 alt="User" width="400" height="500">
+        </div>
+
+        <div class="col-md-4" >
+
+            <h3 class="my-3" style="background-color:lightblue;">First name: @Model.FirstName</h3>
+            <h3 class="my-3" style="background-color: powderblue;">Last name: @Model.LastName</h3>
+            <h3 class="my-3" style="background-color: lightsteelblue;">Contact: @Model.Contact</h3>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Related Projects</h3>
+
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
